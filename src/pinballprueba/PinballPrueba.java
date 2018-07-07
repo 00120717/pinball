@@ -19,7 +19,7 @@ public class PinballPrueba extends JPanel {
 	int ctr = 0;
 	double G = 0.1; //Gravedad
 
-	final int xpos = 280;
+	final int xpos = 570; // posicion en x de 
 	
 	double[] p2d = {300, 200};
 	double[] v2d = {0, 0};
@@ -38,8 +38,14 @@ public class PinballPrueba extends JPanel {
 	double ltheta = 0;
 	
 	int preset[][] = {
-			{0, 400, 135, 450,1}, //paleta derecha
-			{135, 450, 270, 400,1}, //paleta izquierda
+            
+                        //x,y
+			{100, 500, 135, 450,1}, //paleta derecha
+                                    //x,y
+			{100, 450, 440, 500,1}, //paleta izquierda
+                        
+                        
+                        
 			{570, 0, 600, 20, 1}, //esquina derecha
 			{600, 0, 600, 650, 1}, //pared derecha
 			{-1, 0, 600, 0, 1}, //pared de arriba
@@ -51,13 +57,15 @@ public class PinballPrueba extends JPanel {
 			{230, 280, 30, 50},//
 			{400, 200, 25, 100},//
 			{250, 100, 30, 50},//
-                        {50, 400, 35, 50}
+                        {50, 400, 35, 50},
+                        {500, 400, 35, 50}
 	};
 	int lines[][] = new int[100][5];
 	
 	public PinballPrueba(){
 		super();
 		t.start();
+                
 		addKeyListener(new Key());
 		setFocusable(true);
 		
@@ -94,10 +102,13 @@ public class PinballPrueba extends JPanel {
 		p2d[1] += v2d[1];
 		p2d[0] += v2d[0];
                 
+                try{
                 //Dibujar imagenes
 		Imagen img = new Imagen();
                 img.paint(g);
-                    
+                }catch(Exception e) {
+                    e.printStackTrace();
+                }  
 		
 		if(p2d[1] > 1000){
 			p2d[0] = 300;

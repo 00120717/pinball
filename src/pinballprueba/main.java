@@ -16,7 +16,7 @@ JFrame frame = new JFrame();
 
 
 frame.setSize(800,650);
-
+frame.setResizable(false);
 
 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
