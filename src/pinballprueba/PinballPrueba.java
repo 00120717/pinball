@@ -21,7 +21,7 @@ public class PinballPrueba extends JPanel {
 
 	final int xpos = 570; // posicion en x de 
 	
-	double[] p2d = {300, 200};
+	double[] p2d = {570, 200};
 	double[] v2d = {0, 0};
 	
 	int points = 0;
@@ -111,7 +111,7 @@ public class PinballPrueba extends JPanel {
                 }  
 		
 		if(p2d[1] > 1000){
-			p2d[0] = 300;
+			p2d[0] = 570;
 			p2d[1] = 200;
 			v2d[0] = 0;
 			v2d[1] = 0;
