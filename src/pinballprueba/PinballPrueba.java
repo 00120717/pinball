@@ -117,7 +117,7 @@ public class PinballPrueba extends JPanel {
 			v2d[1] = 0;
 			lives++;
 		}
-		if(p2d[0] == 280 && p2d[1] > sd){
+		if(p2d[0] == 570 && p2d[1] > sd){
 			p2d[1] = sd;
 			v2d[1] = Math.min(v2d[1], sv);
 		}
@@ -205,25 +205,31 @@ public class PinballPrueba extends JPanel {
         // controles 
 	private class Key extends KeyAdapter {
 		public void keyPressed(KeyEvent e){
-			if(e.getKeyCode() == KeyEvent.VK_DOWN){
+			if(e.getKeyCode() == KeyEvent.VK_SPACE){
 				setlock = true;
 				sd += 2;
 			}
-			if(e.getKeyCode() == KeyEvent.VK_LEFT){
+			if(e.getKeyCode() == KeyEvent.VK_A){
 				ldown = true;
 			}
-			if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+			if(e.getKeyCode() == KeyEvent.VK_L){
 				rdown = true;
 			}
 		}
 		public void keyReleased(KeyEvent e){
 			setlock = false;
-			if(e.getKeyCode() == KeyEvent.VK_LEFT){
+			if(e.getKeyCode() == KeyEvent.VK_A){
 				ldown = false;
 			}
-			if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+			if(e.getKeyCode() == KeyEvent.VK_L){
 				rdown = false;
 			}
 		}
 	}
+
+    public int getLives() {
+        return lives;
+    }
+    
+    
 }

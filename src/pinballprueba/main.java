@@ -26,8 +26,10 @@ PinballPrueba panel = new PinballPrueba();
 
 frame.add(panel);
 
-frame.setVisible(true);
-
-
+   
+while(panel.getLives()<4){
+    frame.setVisible(true);
 }
+   // frame.setVisible(false);
+    }
 }
