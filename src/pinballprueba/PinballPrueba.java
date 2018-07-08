@@ -27,7 +27,7 @@ public class PinballPrueba extends JPanel {
 	int points = 0;
 	int lives = 0;
 	int sides = 13;
-	
+	int stars=0;
 	double snorm = 400;
 	double sd = 450;
 	double sv = 0;
@@ -49,7 +49,8 @@ public class PinballPrueba extends JPanel {
 			{570, 0, 600, 20, 1}, //esquina derecha
 			{600, 0, 600, 650, 1}, //pared derecha
 			{-1, 0, 600, 0, 1}, //pared de arriba
-			{0, -1, 0, 650, 1} //pared izquierda
+			{0, -1, 0, 650, 1}, //pared izquierda
+                        {645, 0, 600, 0, 1}
 	};
         // dibujar circulos
 	int[][] balls = {
@@ -124,7 +125,7 @@ public class PinballPrueba extends JPanel {
 		
 		if(setlock == false){
 			sv *= 0.95; //impulso
-			sv -= (sd - snorm)/30;
+			sv -= (sd - snorm)/50;
 			sd += sv;
 		}
 		double rc = 0.1;
@@ -196,9 +197,10 @@ public class PinballPrueba extends JPanel {
 		
 		g.fillRect(xpos - 5, (int)sd + 10, 10, 20);
 		
+                stars=points/500;
 		g.drawString("PUNTAJE: " + points , 610, 30);
-		g.drawString("REINICIOS: " +  lives, 610, 60);
-                
+		g.drawString("VIDAS: " +  lives, 610, 60);
+                g.drawString("ESTRELLAS " + stars, 610, 90);
                 
 	}
 	
@@ -229,6 +231,10 @@ public class PinballPrueba extends JPanel {
 
     public int getLives() {
         return lives;
+    }
+
+    public int getStars() {
+        return stars;
     }
     
     

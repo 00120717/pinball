@@ -30,6 +30,8 @@ frame.add(panel);
 while(panel.getLives()<4){
     frame.setVisible(true);
 }
+frame.dispose();
+    System.out.println(panel.getStars());
    // frame.setVisible(false);
     }
 }
